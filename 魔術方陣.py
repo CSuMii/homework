@@ -4,7 +4,7 @@ x = [[-1 for i in range(n)] for i in range(n)]
 line = 0
 col = n//2
 
-cnt = 2
+cnt = 1
 while cnt<=n**2:
     x[line][col] = cnt
     preline = line
