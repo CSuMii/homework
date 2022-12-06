@@ -1,22 +1,18 @@
-n = int(input())
-x = [[-1 for i in range(n)] for i in range(n)]
+import numpy as NP
 
-line = 0
-col = n//2
+N = int(input())
+num = NP.zeros((N,N), dtype=int) #3*3,當無數字就補0
 
-cnt = 1
-while cnt<=n**2:
-    x[line][col] = cnt
-    preline = line
-    precol  =col
-    line -= 1
-    if line==-1:
-        line = n-1
-    col = (col+1)%n
-    if x[line][col]!=-1 :
-        line = preline +1
-        col = precol
-    cnt+=1
+f = 1 #起始數字
 
-for item in x:
-    print(item)
+x, y = 0, N//2 #(i,j=N//2取整數)
+while f <= N**2: #N**2=平方
+    num[x, y] = f
+    f += 1
+    nx, ny = (x-1) % N, (y+1)% N
+    if num[nx, ny]: #新的
+        x += 1
+    else:
+        x, y = nx, ny
+
+print(num)
