@@ -1,7 +1,7 @@
 import numpy as NP
 
 N = int(input())
-num = NP.zeros((N,N), dtype=int) #3*3,當無數字就補0
+num = NP.zeros((N,N), dtype=int) #用輸入的()奇數平方,當無數字就補0
 
 f = 1 #起始數字
 
