@@ -12,3 +12,8 @@ def check(numb):
         return False
     return True
 
+def num2chinese(numb):
+    if not check(numb):
+        return ""
+
+def count(numb):
