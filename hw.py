@@ -14,7 +14,6 @@ def toch(number):
     if not check(number):
         return ""
     temp_ch = derect_translate(number)
-    # print("temp_chinese is ", temp_chinese)
     upch = update(temp_ch)
     if number >= 0:
         return upch
@@ -27,7 +26,6 @@ def update(temp_ch):
     temp_un = []
     for ix, x in enumerate(temp_ch[::-1]):
         if x == "零":
-            # 當前位為0時 特殊處理重複零(上一個為零)問題
             if temp_un and (temp_un[-1] == "零" or temp_un[-1] == "零"):
                 pass
             elif temp_un or len(temp_ch) == 1:
@@ -36,7 +34,6 @@ def update(temp_ch):
             temp_un.append(x + unit_list(ix % 8))
         if ix == 7 and len(temp_ch) > 8:
             temp_un.append("億")
-    # print("tmp_inf is ", tmp_inf)
     temp_un.reverse()
     return "".join(temp_un)
   
