@@ -26,7 +26,7 @@ def update(ch):
     un = []
     for ix, x in enumerate(ch[::-1]):
         if x == "零":
-            if un and (un[-1] == "零" or un[-1] == "零"): #避免重複
+            if un and (un[-1] == "零" or un[1] == "零"): #避免重複
                 pass
             elif un or len(ch) == 1:
                 un.append(x)
@@ -38,4 +38,4 @@ def update(ch):
     return "".join(un)
   
 if __name__ == '__main__':
-   print(toch(123456789)+'元整')
+   print(toch(12000000)+'元整')
